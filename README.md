@@ -84,9 +84,9 @@ Magic characters are other characters in string patterns that provide even more 
 - [] - set
 - . - matches any character
 - % - escape character
-- PLUS - matches 1 or more of the specified pattern or literal (greedy match)
-- ASTERISK - matches 0 or more specified pattern or literal (greedy match)
-- MINUS - also does what * does, but matches the shortest sequence (non-greedy match)
+- \+ - matches 1 or more of the specified pattern or literal (greedy match)
+- \* - matches 0 or more specified pattern or literal (greedy match)
+- \- - also does what * does, but matches the shortest sequence (non-greedy match)
 - ? - matches 0 or 1 of the specified pattern or literal
 
 .: Matches any character, example:
