@@ -2,7 +2,7 @@
 This tutorial is for anyone looking for Lua's regular expression equivalent. You need a basic knowledge of the Lua syntax and zero knowledge of the Roblox API. This tutorial will be relatively lengthy, but I wanted to cover everything I could think of to further your knowledge on string patterns. If something I said was wrong please let me know and I will fix it as soon as I see it.
 
 ### What are string patterns?
-String patterns is Lua's equivalent to a regular expression (althought not exactly like regular expressions). If you do not know what a regular expression is then putting it another way, string patterns are a powerful way to search for content in a string. String patterns are used in conjunction with certain Lua functions to find this content in a string. Some functions that use string patterns are **match,** **find,** **gmatch,** and **gsub.** I will go over these specific functions later in their rightful sections.
+String patterns is Lua's equivalent to a regular expression (although not exactly like regular expressions). If you do not know what a regular expression is then putting it another way, string patterns are a powerful way to search for content in a string. String patterns are used in conjunction with certain Lua functions to find this content in a string. Some functions that use string patterns are **match,** **find,** **gmatch,** and **gsub.** I will go over these specific functions later in their rightful sections.
 
 ### Patterns
 There are a list of patterns that have a specific meaning, these patterns are:
@@ -208,7 +208,7 @@ print(String:match("Age: %d*"))
 --]]
 ```
 
--: Matches 0 or more repetitions while gettin the shortest possible match, example:
+-: Matches 0 or more repetitions while getting the shortest possible match, example:
 
 ```lua
 local String = "010 01010 01110 00"
@@ -251,7 +251,7 @@ print(String:match("0.?0"))
 	the pattern searches the string
 	for a value that starts with a
 	0 and ends with 0 and has a maximum
-	of one charater in between.
+	of one character in between.
 	The last example has two characters,
 	but since it starts and ends with
 	a 0 it is matched because the ?
@@ -304,7 +304,7 @@ print(String:match("Age: %d+"))
 --[[
 	However, we are matching the FULL term,
 	what if we just wanted the number? This
-	is where caputres come into play.
+	is where captures come into play.
 --]]
 
 print(String:match("Weight: (%d+)"))
@@ -347,7 +347,7 @@ print(count)
 	Allow me to explain, gsub is a replacement
 	function. In our case, we pass two arguments
 	to gsub, the VowelsSet (which is also the pattern),
-	and what we want to replace each occurence with.
+	and what we want to replace each occurrence with.
 	The pattern checks for any letter that is a
 	LOWER CASE a, e, i, o, u. This is the power
 	of sets. You can create your own *set* of
@@ -362,7 +362,7 @@ print(count)
 	As you can see above, the replaced the vowels with
 	nothing, an empty string, so this effectively removes
 	the vowel. The second return value of gsub is the
-	amount of occurences that have been removed. In this
+	amount of occurrences that have been removed. In this
 	case we had 13 vowels, and they have been removed.
 --]]
 ```
@@ -439,7 +439,7 @@ print(PhoneNumber:match(Pattern))
 
 We escaped both parentheses and both of the dashes (hyphens, whatever you want to call them).
 
-This is fine and dandelion, but what if we see the other representation of the number? 555-100-5555, this wouldn't work because our pattern is explicitly checking for a "(" and ")". Recall we have another magic character, the ?. This magic character allows us to check if there is zero or one occurence which is exactly what we need. Allow the code to explain:
+This is fine and dandelion, but what if we see the other representation of the number? 555-100-5555, this wouldn't work because our pattern is explicitly checking for a "(" and ")". Recall we have another magic character, the ?. This magic character allows us to check if there is zero or one occurrence which is exactly what we need. Allow the code to explain:
 
 ```lua
 local PhoneNumber1 = "(555)-100-5555"
@@ -453,7 +453,7 @@ print(PhoneNumber2:match(Pattern))
 --> 555-100-5555
 ```
 
-It worked! So, the ? checks if there is zero or one occurence of a "(" and a ")". Since the second phone number has none this is fine and doesn't match it. What if we don't use hypens and instead use spaces for our phone number? We can handle this too. Granted, it is very ugly, but we can do it. Recall how there is another pattern that matches whitespace, this is the %s pattern.
+It worked! So, the ? checks if there is zero or one occurrence of a "(" and a ")". Since the second phone number has none this is fine and doesn't match it. What if we don't use hyphens and instead use spaces for our phone number? We can handle this too. Granted, it is very ugly, but we can do it. Recall how there is another pattern that matches whitespace, this is the %s pattern.
 
 ```lua
 local PhoneNumber1 = "(555)-100-5555"
@@ -475,7 +475,7 @@ print(PhoneNumber4:match(Pattern))
 --> 555 100 5555
 ```
 
-Man! That's a mess, let's explain what we did. We used the %s pattern to match whitespace, in this case a space. We used a set to check for the occurence of a space or a hyphen. At the end of the set we used a ? to check for zero or one of those occurences. Technically, you can also make it all one number and it'll match because of how we set up the pattern, but let's ignore that edge case. Another problem is the fact %s matches not only a space but other characters as well. The characters %s matches are:
+Man! That's a mess, let's explain what we did. We used the %s pattern to match whitespace, in this case a space. We used a set to check for the occurrence of a space or a hyphen. At the end of the set we used a ? to check for zero or one of those occurrences. Technically, you can also make it all one number and it'll match because of how we set up the pattern, but let's ignore that edge case. Another problem is the fact %s matches not only a space but other characters as well. The characters %s matches are:
 
 - 9 - TAB (horizontal tab, \t)
 - 10 - LF (line feed, new line, \n)
@@ -540,7 +540,7 @@ The ASCII representation of each control character is: 0, 1, 2, 3, 4, 5, 6, 7, 8
 - 19 - DC3 (device control 3)
 - 20 - DC4 (device control 4)
 - 21 - NAK (negative acknowledge)
-- 22 - SYN (syncronouse idle)
+- 22 - SYN (synchronous idle)
 - 23 - ETB (end of transmission block)
 - 24 - CAN (cancel)
 - 25 - EM (end of medium)
