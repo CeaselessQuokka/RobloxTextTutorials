@@ -461,7 +461,7 @@ local PhoneNumber1 = "(555)-100-5555"
 local PhoneNumber2 = "(555) 100 5555"
 local PhoneNumber3 = "555-100-5555"
 local PhoneNumber4 = "555 100 5555"
-local Pattern = "%(?%d%d%d%)?[%s-]?%d%d%d[%s-]?%d%d%d%d"
+local Pattern = "%(?%d%d%d%)?[%s%-]?%d%d%d[%s%-]?%d%d%d%d"
 
 print(PhoneNumber1:match(Pattern))
 --> (555)-100-5555
@@ -488,7 +488,7 @@ Man! That's a mess, let's explain what we did. We used the %s pattern to match w
 If we want to match the exact space character we can simply change the pattern to:
 
 ```lua
-local Pattern = "%(?%d%d%d%)?[ -]?%d%d%d[ -]?%d%d%d%d"
+local Pattern = "%(?%d%d%d%)?[ %-]?%d%d%d[ %-]?%d%d%d%d"
 ```
 
 Notice how the %s is now just a space. Since the space character is inserted, we are using it as a literal (because the space character is it's own literal just like a is a literal). This will only match a space (byte 32) now as opposed to any of the whitespace characters.
@@ -552,3 +552,5 @@ The ASCII representation of each control character is: 0, 1, 2, 3, 4, 5, 6, 7, 8
 - 30 - RS (record separator)
 - 31 - US (unit separator)
 - 127 - DEL (delete)
+
+-- todo: add ranges, ^ doesn't work in gmatch, complements of sets, more into captures and sets, %b (balanced capture), %f, explain weird set behavior where if a **-** is not in front or at the end of a set it will skip the - and the character the minus is front of
