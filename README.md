@@ -553,4 +553,4 @@ The ASCII representation of each control character is: 0, 1, 2, 3, 4, 5, 6, 7, 8
 - 31 - US (unit separator)
 - 127 - DEL (delete)
 
--- todo: add ranges, ^ doesn't work in gmatch, complements of sets, more into captures and sets, %b (balanced capture), %f, explain weird set behavior where if a **-** is not in front or at the end of a set it will skip the - and the character the minus is front of
+-- todo: add ranges, ^ doesn't work in gmatch, complements of sets, more into captures and sets, %b (balanced capture), %f, explain **-** in ranges and having to escape it unless in front or end
