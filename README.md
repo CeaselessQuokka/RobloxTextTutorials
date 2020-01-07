@@ -16,6 +16,7 @@ There are a list of patterns that have a specific meaning, these patterns are:
 - %s - space characters
 - %u - upper case characters (A-Z)
 - %w - any alphanumeric character (0-9, A-Z, a-z)
+- %g - any printable character (a non-space, non-control character)
 - %x - hexadecimal digits (0-9, A-F, a-f)
 - %z - matches the null terminator (byte 0; \0)
 
